@@ -1,0 +1,774 @@
+this is the html <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SelfDrive 9ja</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="real.css" />
+
+  <!-- Fonts (optional but clean setup) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+<header class="navbar">
+  
+  <!-- Brand -->
+  <div class="logo">
+    SelfDrive <span>9ja</span>
+  </div>
+
+  <!-- CTA -->
+  <nav class="nav-links">
+    <a href="#problem">Problem</a>
+    <a href="#solution">Solution</a>
+    <a href="#fleet">Fleet</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="nav-cta">
+    <button class="btn">Book Now</button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">☀️</button>
+  </div>
+
+</header>
+
+<section class="hero">
+
+  <!-- LEFT: TEXT CONTENT -->
+  <div class="hero-text">
+
+    <h1>
+      Drive Your <span>Freedom.</span>
+    </h1>
+
+    <p>
+      Flexible, affordable & convenient self-drive car rentals in Lagos.
+      Your car, your terms.
+    </p>
+
+    <!-- CTA GROUP -->
+    <div class="hero-buttons">
+      <button class="btn">Book a Car</button>
+      <button class="btn-outline">Explore Fleet</button>
+    </div>
+
+  </div>
+
+  <!-- RIGHT: IMAGE -->
+  <div class="hero-media">
+    <img src="images/image-removebg-preview.png" alt="SelfDrive 9ja Rental Car" />
+  </div>
+
+</section>
+
+<section class="section" id="problem">
+
+  <div class="section-title">
+    <h2>The Problem</h2>
+    <p>The everyday mobility struggle in Lagos</p>
+  </div>
+
+  <div class="grid problem-grid">
+
+    <div class="card problem-card">
+      <h3>Hiring Drivers</h3>
+      <p>Risky trust decisions, inconsistent availability, and high daily cost.</p>
+    </div>
+
+    <div class="card problem-card">
+      <h3>Ride-Hailing Apps</h3>
+      <p>Expensive for frequent use, unpredictable pricing, and surge stress.</p>
+    </div>
+
+    <div class="card problem-card">
+      <h3>Car Ownership</h3>
+      <p>High capital requirement, maintenance burden, and depreciation loss.</p>
+    </div>
+
+    <div class="card problem-card">
+      <h3>Traditional Rentals</h3>
+      <p>Slow paperwork, rigid booking process, and poor flexibility.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section dark" id="solution">
+
+  <div class="section-title">
+    <h2>Our Solution</h2>
+    <p>A simpler, smarter way to move around Lagos</p>
+  </div>
+
+  <div class="grid solution-grid">
+
+    <div class="card solution-card">
+      <h3>Self-Drive Freedom</h3>
+      <p>Take full control of your movement without relying on drivers or ride apps.</p>
+    </div>
+
+    <div class="card solution-card">
+      <h3>Flexible Rentals</h3>
+      <p>Daily, weekly, and monthly plans designed around your schedule—not the system.</p>
+    </div>
+
+    <div class="card solution-card">
+      <h3>Instant Booking</h3>
+      <p>Fast, seamless booking with minimal friction and quick vehicle allocation.</p>
+    </div>
+
+    <div class="card solution-card">
+      <h3>Trusted Fleet</h3>
+      <p>Well-maintained, insured vehicles for safe and reliable travel.</p>
+    </div>
+
+  </div>
+
+  <!-- POSITIONING QUOTE -->
+  <div class="solution-quote">
+    We don’t move you like a service. We give you control like ownership—without the cost.
+  </div>
+
+</section>
+
+<section class="section" id="audience">
+
+  <div class="section-title">
+    <h2>Who We Serve</h2>
+    <p>Built for people who need movement without stress</p>
+  </div>
+
+  <div class="grid audience-grid">
+
+    <div class="card audience-card">
+      <h3>Young Professionals</h3>
+      <p>Daily mobility that matches a fast-paced lifestyle without ownership pressure.</p>
+    </div>
+
+    <div class="card audience-card">
+      <h3>Corporate Teams</h3>
+      <p>Reliable transport solutions for staff movement, operations, and logistics.</p>
+    </div>
+
+    <div class="card audience-card">
+      <h3>Expats & Visitors</h3>
+      <p>Independent driving freedom without navigating complex local transport systems.</p>
+    </div>
+
+    <div class="card audience-card">
+      <h3>SMEs & Startups</h3>
+      <p>Flexible mobility support without the cost of building a vehicle fleet.</p>
+    </div>
+
+    <div class="card audience-card">
+      <h3>Event & Short-Term Users</h3>
+      <p>Quick access to vehicles for weddings, meetings, and short-term needs.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section" id="featured-cars">
+
+  <div class="section-title">
+    <h2>Available Vehicles</h2>
+    <p>Select a ride that matches your journey</p>
+  </div>
+
+  <div class="grid car-display-grid">
+
+    <div class="card car-display-card">
+      <div class="car-image-box">
+        <img src="images/camry2018.jpg" alt="Vehicle 1" />
+      </div>
+      <div class="car-info">
+        <span class="car-tag">Economy</span>
+        <h3>Camry</h3>
+        <p class="car-features">🕹️ Automatic | 💼 Business Class Comfort</p>
+        <div class="car-pricing-row">
+          <span class="car-rate">₦25,000<span>/day</span></span>
+          <button class="btn-rent">Rent</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card car-display-card">
+      <div class="car-image-box">
+        <img src="images/corolla.jpg" alt="Vehicle 2" />
+      </div>
+      <div class="car-info">
+        <span class="car-tag">Economy Standards</span>
+        <h3>Corolla</h3>
+        <p class="car-features">🕹️ Automatic | ⛽ Highly Fuel Efficient</p>
+        <div class="car-pricing-row">
+          <span class="car-rate">₦25,000<span>/day</span></span>
+          <button class="btn-rent">Rent</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card car-display-card">
+      <div class="car-image-box">
+        <img src="images/highlander.jpg" alt="Vehicle 3" />
+      </div>
+      <div class="car-info">
+        <span class="car-tag">Executive</span>
+        <h3>Highlander</h3>
+        <p class="car-features">🕹️ Automatic | 👨‍👩‍👧‍👦 Spacious 7-Seater Family Comfort</p>
+        <div class="car-pricing-row">
+          <span class="car-rate">₦65,000<span>/day</span></span>
+          <button class="btn-rent">Rent</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card car-display-card">
+      <div class="car-image-box">
+        <img src="images/hilux.jpg" alt="Vehicle 4" />
+      </div>
+      <div class="car-info">
+        <span class="car-tag">Executive</span>
+        <h3>HILUX</h3>
+        <p class="car-features">🕹️ Automatic | 🪵 Rugged All-Terrain Workhorse</p>
+        <div class="car-pricing-row">
+          <span class="car-rate">₦75,000<span>/day</span></span>
+          <button class="btn-rent">Rent</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card car-display-card">
+      <div class="car-image-box">
+        <img src="images/kiario.jpg" alt="Vehicle 5" />
+      </div>
+      <div class="car-info">
+        <span class="car-tag">Economy Standards</span>
+        <h3>Kia Rio</h3>
+        <p class="car-features">🕹️ Automatic | 🏙️ Modern Compact City Driver | ⛽ Highly Fuel Efficient</p>
+        <div class="car-pricing-row">
+          <span class="car-rate">₦90,000<span>/day</span></span>
+          <button class="btn-rent">Rent</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card car-display-card">
+      <div class="car-image-box">
+        <img src="images/prado.jpg" alt="Vehicle 6" />
+      </div>
+      <div class="car-info">
+        <span class="car-tag">Luxury SUV</span>
+        <h3>Prado</h3>
+        <p class="car-features">🕹️ Automatic | 👑 Premium VVIP Prestige</p>
+        <div class="car-pricing-row">
+          <span class="car-rate">₦150,000<span>/day</span></span>
+          <button class="btn-rent">Rent</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card car-display-card">
+      <div class="car-image-box">
+        <img src="images/rx350.jpg" alt="Vehicle 7" />
+      </div>
+      <div class="car-info">
+        <span class="car-tag">Corporate</span>
+        <h3>RX350</h3>
+        <p class="car-features">🕹️ Automatic | ✨ Premium Cruise & Plush Interior</p>
+        <div class="car-pricing-row">
+          <span class="car-rate">₦120,000<span>/day</span></span>
+          <button class="btn-rent">Rent</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section dark" id="fleet">
+
+  <div class="section-title">
+    <h2>Our Fleet</h2>
+    <p>Vehicles designed for every lifestyle and journey</p>
+  </div>
+
+  <div class="grid fleet-grid">
+
+    <div class="card fleet-card">
+      <h3>Economy Cars</h3>
+      <p>Fuel-efficient and affordable options perfect for daily movement.</p>
+    </div>
+
+    <div class="card fleet-card">
+      <h3>Executive Sedans</h3>
+      <p>Comfortable, refined vehicles built for business and premium travel.</p>
+    </div>
+
+    <div class="card fleet-card">
+      <h3>Luxury SUVs</h3>
+      <p>Spacious and powerful SUVs for family trips and executive comfort.</p>
+    </div>
+
+    <div class="card fleet-card">
+      <h3>Corporate Pool Vehicles</h3>
+      <p>Dedicated mobility solutions for company operations and staff use.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="how-section" id="how-it-works">
+
+  <div class="section-title">
+    <h2>How It Works</h2>
+    <p>Simple. Fast. Reliable.</p>
+  </div>
+
+  <div class="timeline">
+
+    <!-- STEP 1 -->
+    <div class="timeline-item">
+      <div class="timeline-number">1</div>
+
+      <div class="timeline-content">
+        <h3>Choose Your Car</h3>
+        <p>
+          Browse our fleet and select a vehicle that fits your needs and lifestyle.
+        </p>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="timeline-item">
+      <div class="timeline-number">2</div>
+
+      <div class="timeline-content">
+        <h3>Select Duration</h3>
+        <p>
+          Choose a daily, weekly, or monthly plan based on your schedule.
+        </p>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="timeline-item">
+      <div class="timeline-number">3</div>
+
+      <div class="timeline-content">
+        <h3>Submit Verification</h3>
+        <p>
+          Upload your valid ID and driver's license for quick approval.
+        </p>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="timeline-item">
+      <div class="timeline-number">4</div>
+
+      <div class="timeline-content">
+        <h3>Confirm Booking</h3>
+        <p>
+          Finalize your booking and receive confirmation instantly.
+        </p>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="timeline-item">
+      <div class="timeline-number">5</div>
+
+      <div class="timeline-content">
+        <h3>Drive Freely</h3>
+        <p>
+          Pick up or receive your vehicle and enjoy movement on your terms.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section dark" id="pricing">
+
+  <div class="section-title">
+    <h2>Pricing & Flexibility</h2>
+    <p>Flexible plans built around your lifestyle and mobility needs</p>
+  </div>
+
+  <div class="grid pricing-grid">
+
+    <!-- DAILY -->
+    <div class="card pricing-card">
+      <h3>Daily Rentals</h3>
+
+      <p class="pricing-tag">
+        Perfect for short trips and daily movement.
+      </p>
+    </div>
+
+    <!-- WEEKLY -->
+    <div class="card pricing-card featured-plan">
+      <div class="featured-badge">Most Popular</div>
+
+      <h3>Weekly Packages</h3>
+
+      <p class="pricing-tag">
+        Better value for extended use and flexible schedules.
+      </p>
+    </div>
+
+    <!-- MONTHLY -->
+    <div class="card pricing-card">
+      <h3>Monthly Subscriptions</h3>
+
+      <p class="pricing-tag">
+        Ideal for professionals, businesses, and long-term mobility.
+      </p>
+    </div>
+
+    <!-- LEASE -->
+    <div class="card pricing-card">
+      <h3>Long-Term Lease</h3>
+
+      <p class="pricing-tag">
+        Dedicated mobility solutions for organizations and corporate teams.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section" id="corporate">
+
+  <div class="section-title">
+    <h2>Corporate Mobility Solutions</h2>
+    <p>Built for modern teams, operations, and business movement</p>
+  </div>
+
+  <div class="grid corporate-grid">
+
+    <div class="card corporate-card">
+      <h3>Staff Transportation</h3>
+      <p>
+        Reliable mobility support for employees, executives, and operational teams.
+      </p>
+    </div>
+
+    <div class="card corporate-card">
+      <h3>Dedicated Pool Vehicles</h3>
+      <p>
+        Flexible vehicle access for internal company movement and daily operations.
+      </p>
+    </div>
+
+    <div class="card corporate-card">
+      <h3>Project-Based Allocation</h3>
+      <p>
+        Temporary vehicle deployment for projects, field operations, and logistics.
+      </p>
+    </div>
+
+    <div class="card corporate-card">
+      <h3>Flexible Billing Structure</h3>
+      <p>
+        Simplified invoicing and scalable payment structures for businesses.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- CORPORATE POSITIONING STATEMENT -->
+  <div class="corporate-quote">
+    Reduce operational transport stress without owning or maintaining a fleet.
+  </div>
+
+</section>
+
+<section class="section dark" id="trust">
+
+  <div class="section-title">
+    <h2>Why People Trust SelfDrive 9ja</h2>
+    <p>Reliable mobility backed by safety, transparency, and support</p>
+  </div>
+
+  <div class="grid trust-grid">
+
+    <div class="card trust-card">
+      <h3>Fully Insured Vehicles</h3>
+      <p>
+        Every vehicle is properly insured for safer and more confident travel.
+      </p>
+    </div>
+
+    <div class="card trust-card">
+      <h3>Routine Maintenance</h3>
+      <p>
+        Vehicles are regularly inspected and maintained for reliability and comfort.
+      </p>
+    </div>
+
+    <div class="card trust-card">
+      <h3>Verified User Process</h3>
+      <p>
+        Secure onboarding and identity verification designed to protect every user.
+      </p>
+    </div>
+
+    <div class="card trust-card">
+      <h3>24/7 Customer Support</h3>
+      <p>
+        Fast assistance whenever you need help before, during, or after your trip.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- TRUST STATEMENT -->
+  <div class="trust-quote">
+    Your safety, privacy, and mobility experience remain our highest priority.
+  </div>
+
+</section>
+
+<section class="section dark" id="testimonials">
+
+  <div class="section-title">
+    <h2>What Customers Say</h2>
+    <p>Trusted by professionals, businesses, and everyday Lagos drivers</p>
+  </div>
+
+  <div class="grid testimonial-grid">
+
+    <!-- TESTIMONIAL 1 -->
+    <div class="card testimonial-card">
+      <p class="testimonial-text">
+        “The booking process was smooth and the car arrived exactly as expected.
+        It honestly made movement around Lagos far less stressful.”
+      </p>
+
+      <h3>— Young Professional</h3>
+    </div>
+
+    <!-- TESTIMONIAL 2 -->
+    <div class="card testimonial-card">
+      <p class="testimonial-text">
+        “We used SelfDrive 9ja for staff mobility during a project cycle and it
+        significantly reduced transportation delays and costs.”
+      </p>
+
+      <h3>— Operations Manager</h3>
+    </div>
+
+    <!-- TESTIMONIAL 3 -->
+    <div class="card testimonial-card">
+      <p class="testimonial-text">
+        “Clean vehicle, responsive support, and zero unnecessary complications.
+        The experience felt premium from start to finish.”
+      </p>
+
+      <h3>— Returning Customer</h3>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section comparison-section" id="comparison">
+
+  <div class="section-title">
+    <h2>Why SelfDrive 9ja Stands Out</h2>
+    <p>A smarter alternative to ride-hailing and traditional mobility systems</p>
+  </div>
+
+  <div class="comparison-wrapper">
+
+    <table class="comparison-table">
+
+      <thead>
+        <tr>
+          <th>Key Factors</th>
+          <th>SelfDrive 9ja</th>
+          <th>Ride-Hailing Apps</th>
+          <th>Traditional Rentals</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>Pricing Stability</td>
+          <td>Fixed and predictable rates</td>
+          <td>Surge pricing fluctuations</td>
+          <td>Often inconsistent</td>
+        </tr>
+
+        <tr>
+          <td>Privacy & Comfort</td>
+          <td>Private self-drive experience</td>
+          <td>Shared driver experience</td>
+          <td>Depends on provider</td>
+        </tr>
+
+        <tr>
+          <td>Flexibility</td>
+          <td>Daily, weekly & monthly options</td>
+          <td>Trip-by-trip only</td>
+          <td>Rigid rental structure</td>
+        </tr>
+
+        <tr>
+          <td>Control</td>
+          <td>Full control of movement</td>
+          <td>Dependent on drivers</td>
+          <td>Limited flexibility</td>
+        </tr>
+
+        <tr>
+          <td>Operational Reliability</td>
+          <td>Consistent vehicle access</td>
+          <td>Driver cancellations possible</td>
+          <td>Slow booking processes</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</section>
+
+<section class="cta-section" id="contact">
+
+  <div class="cta-container">
+
+    <!-- MAIN CTA -->
+    <h2>
+      Ready to Drive on Your Terms?
+    </h2>
+
+    <p class="cta-text">
+      Book your next vehicle with ease and experience flexible mobility
+      designed around your lifestyle.
+    </p>
+
+    <button class="cta-button">
+  Book Now
+</button>
+
+    <!-- CONTACT -->
+    <div class="contact-box">
+
+      <h3>Contact Us</h3>
+
+      <p>
+        44 Local Airport Road, Ikeja, Lagos
+      </p>
+
+      <p>
+        +234 803 518 8524
+      </p>
+
+    </div>
+
+    <!-- BRAND MESSAGE -->
+    <div class="brand-message">
+      <h3>Drive Freedom, Drive Smart</h3>
+      <p>Your Car. Your Terms.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <h3>SelfDrive <span>9ja</span></h3>
+
+      <p>
+        Flexible self-drive mobility solutions built for modern Lagos movement.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-links">
+
+      <a href="#problem">Problem</a>
+      <a href="#solution">Solution</a>
+      <a href="#fleet">Fleet</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
+      <p>© 2026 SelfDrive 9ja. All Rights Reserved.</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script>
+  // Wait for the DOM to be fully loaded and check if GSAP is available
+  document.addEventListener("DOMContentLoaded", () => {
+    if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.utils.toArray(".timeline-item").forEach((item) => {
+        // Ensure items start hidden if you want them to fade/move up on scroll
+        gsap.set(item, { opacity: 0, y: 30 }); 
+
+        gsap.to(item, {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 85%",
+            toggleActions: "play none none none" // Plays once when scrolling down
+          }
+        });
+      });
+    }
+  });
+</script>
+
+<script>
+const toggle = document.getElementById("themeToggle");
+
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("light-mode");
+
+  if(document.body.classList.contains("light-mode")){
+    toggle.innerHTML = "☀️";
+  } else {
+    toggle.innerHTML = "🌙";
+  }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,697 @@
+/* ==========================================
+   1. CORE RESET & VARIABLES
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Dark Mode Colors (Default) */
+  --bg-primary: #0b0b0b;
+  --bg-secondary: #0f0f0f;
+  --bg-card: #111111;
+  --bg-timeline: #151515;
+  --text-main: #ffffff;
+  --text-muted: #cfcfcf;
+  --accent-green: #00c853;
+  --border-color: #222222;
+  --nav-bg: rgba(0, 0, 0, 0.85);
+  --shadow-color: rgba(0, 200, 83, 0.15);
+  --shadow-hover: rgba(0, 200, 83, 0.25);
+}
+
+/* Light Mode Overrides */
+body.light-mode {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f9f7;
+  --bg-card: #f0f2f0;
+  --bg-timeline: #eaeaea;
+  --text-main: #121212;
+  --text-muted: #4a4a4a;
+  --border-color: #dddddd;
+  --nav-bg: rgba(255, 255, 255, 0.9);
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.6;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================
+   2. NAVIGATION BAR
+   ========================================== */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 7%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--nav-bg);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-color);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.logo span {
+  color: var(--accent-green);
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 15px;
+  transition: 0.3s;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--accent-green);
+}
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Keeps a nice clean gap between 'Book Now' and the Sun icon */
+  flex-shrink: 0; /* Prevents the browser from squeezing this area */
+}
+
+/* ==========================================
+   3. BUTTONS
+   ========================================== */
+.btn {
+  background: var(--accent-green);
+  color: #0b0b0b;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 10px 20px var(--shadow-color);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px var(--shadow-hover);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--accent-green);
+  color: var(--accent-green);
+  padding: 12px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background: var(--accent-green);
+  color: black;
+}
+
+/* ==========================================
+   4. HERO SECTION
+   ========================================== */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+  padding: 120px 7% 80px;
+}
+
+.hero-text h1 {
+  font-size: clamp(42px, 5vw, 64px);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-text span {
+  color: var(--accent-green);
+}
+
+.hero-text p {
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.hero-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-media img {
+  width: 100%;
+  max-width: 520px;
+  height: auto; /* REMOVED 600px -> changed to auto to let the full image scale naturally */
+  object-fit: contain; /* REMOVED cover -> changed to contain so the whole car fits inside */
+  border-radius: 25px;
+}
+
+/* ==========================================
+   5. LAYOUT & CARDS GLOBAL SYSTEM
+   ========================================== */
+.section {
+  padding: 100px 7%;
+}
+
+.section.dark {
+  background: var(--bg-secondary);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  color: var(--text-muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-top: 50px;
+}
+
+.card {
+  background: var(--bg-card);
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-green);
+}
+
+.card h3 {
+  color: var(--accent-green);
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Card Accent Overrides & Glows */
+.problem-card::before, .trust-card::before, .testimonial-card::before, .pricing-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(0, 200, 83, 0.08), transparent 60%);
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.audience-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--accent-green);
+  transition: 0.3s;
+}
+
+.audience-card:hover::after {
+  width: 100%;
+}
+
+.corporate-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 0%;
+  background: var(--accent-green);
+  transition: 0.35s ease;
+}
+
+.corporate-card:hover::before {
+  height: 100%;
+}
+
+/* ==========================================
+   6. SPECIFIC CONTENT BLOCKS (Quotes & Lists)
+   ========================================== */
+.solution-quote, .corporate-quote, .trust-quote {
+  margin-top: 50px;
+  text-align: center;
+  font-size: clamp(20px, 3vw, 24px);
+  font-weight: 600;
+  color: var(--accent-green);
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+}
+
+/* How It Works Timeline */
+.how-section {
+  padding: 120px 7%;
+  background: linear-gradient(180deg, var(--bg-primary), var(--bg-secondary));
+}
+
+.timeline {
+  position: relative;
+  max-width: 850px;
+  margin: 80px auto 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--border-color);
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.timeline-number {
+  width: 60px;
+  height: 60px;
+  background: var(--accent-green);
+  color: black;
+  border-radius: 50%;
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.timeline-content {
+  background: var(--bg-timeline);
+  padding: 25px;
+  border-radius: 18px;
+  flex: 1;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* Pricing Special Badge */
+.featured-plan {
+  border: 2px solid var(--accent-green);
+  transform: scale(1.03);
+}
+
+.featured-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: var(--accent-green);
+  color: black;
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Testimonials Decorative Style */
+.testimonial-text::before {
+  content: "“";
+  position: absolute;
+  left: -10px;
+  top: -20px;
+  font-size: 60px;
+  color: rgba(0, 200, 83, 0.15);
+  font-family: serif;
+}
+
+/* ==========================================
+   7. COMPARISON TABLE
+   ========================================== */
+.comparison-wrapper {
+  overflow-x: auto;
+  margin-top: 50px;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.comparison-table th {
+  background: var(--accent-green);
+  color: black;
+  padding: 20px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.comparison-table td {
+  padding: 18px 20px;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+  background: rgba(255,255,255,0.02);
+}
+
+body.light-mode .comparison-table tbody tr:nth-child(even) {
+  background: rgba(0,0,0,0.02);
+}
+
+.comparison-table tbody tr:hover {
+  background: rgba(0, 200, 83, 0.05);
+}
+
+.comparison-table td:first-child {
+  color: var(--accent-green);
+  font-weight: 600;
+}
+
+/* ==========================================
+   8. CALL TO ACTION & FOOTER
+   ========================================== */
+.cta-section {
+  background: var(--accent-green);
+  color: black;
+  padding: 120px 7%;
+}
+
+.cta-container {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-container h2 {
+  font-size: clamp(38px, 5vw, 60px);
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+
+.cta-text {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.cta-button {
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 16px 34px;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+.cta-button:hover {
+  transform: translateY(-4px);
+  background: #111111;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+}
+
+.contact-box { margin-top: 80px; }
+.contact-box h3 { margin-bottom: 15px; font-size: 24px; }
+.contact-box p { margin-bottom: 10px; font-size: 16px; }
+.brand-message { margin-top: 70px; }
+.brand-message h3 { font-size: 28px; margin-bottom: 10px; }
+
+.footer {
+  background: #050505;
+  padding: 70px 7% 40px;
+  border-top: 1px solid #161616;
+  color: #ffffff;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-brand h3 { font-size: 28px; margin-bottom: 15px; }
+.footer-brand span { color: var(--accent-green); }
+.footer-brand p { color: #888; max-width: 600px; margin: 0 auto 40px; }
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.footer-links a:hover { color: var(--accent-green); }
+.footer-bottom { border-top: 1px solid #161616; padding-top: 25px; }
+.footer-bottom p { color: #666; font-size: 14px; }
+
+/* ==========================================
+   9. ACCESSIBLE THEME TOGGLE ELEMENT
+   ========================================== */
+.theme-toggle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: rotate(15deg) scale(1.05);
+  border-color: var(--accent-green);
+}
+
+/* ==========================================
+   10. MOBILE RESPONSIVENESS
+   ========================================== */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+    padding-top: 140px;
+  }
+  .hero-text p { margin-left: auto; margin-right: auto; }
+  .hero-media img { height: 400px; }
+  .hero-buttons { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+  .navbar { padding: 15px 5%; }
+  .nav-links { display: none; } /* Consider adding a hamburger menu later */
+  .hero-text h1 { font-size: 38px; }
+  .hero-text p { font-size: 16px; }
+  .hero-media img { height: 350px; }
+  .section { padding: 80px 5%; }
+  .featured-plan { transform: scale(1); }
+  .cta-container h2 { font-size: 36px; }
+  .cta-text { font-size: 16px; }
+  .comparison-table { min-width: 700px; }
+  .footer-links { gap: 18px; }
+  .timeline::before { left: 28px; }
+  .timeline-item { gap: 20px; }
+}
+
+/* ==========================================
+   NEW FEATURED CARS SECTION STYLES
+   ========================================== */
+#featured-cars {
+  background: var(--bg-primary);
+}
+
+.car-display-card {
+  padding: 0 !important; /* Removes padding for flush image layout */
+  display: flex;
+  flex-direction: column;
+}
+
+.car-image-box {
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.car-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.car-display-card:hover .car-image-box img {
+  transform: scale(1.06);
+}
+
+.car-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.car-tag {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.car-display-card h3 {
+  margin-bottom: 6px !important;
+  font-size: 19px;
+  color: var(--accent-green);
+}
+
+.car-features {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.car-pricing-row {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid var(--border-color);
+}
+
+.car-rate {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.car-rate span {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.btn-rent {
+  background: var(--accent-green);
+  color: #0b0b0b;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-rent:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* 1. Define the driving animation */
+@keyframes driveIn {
+  0% {
+    transform: translateX(100px); /* Start 100px to the right */
+    opacity: 0;                   /* Start invisible */
+  }
+  100% {
+    transform: translateX(0);     /* Stop exactly in its original position */
+    opacity: 1;                   /* Fully visible */
+  }
+}
+
+/* 2. Apply the animation to your hero car image */
+.hero-media img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 25px;
+  
+  /* THIS TRIGGERS THE DRIVE-IN EFFECT ON LOAD */
+  animation: driveIn 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
